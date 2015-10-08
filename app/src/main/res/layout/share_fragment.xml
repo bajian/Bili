@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#F2F2F2"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    >
+
+<com.yanbober.support_library_demo.view.MySwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_container"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/viewflow"/>
+
+
+            <!--            <com.wetime.autobannerviewpager.AutoBannerViewPager
+                            android:id="@+id/abv"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp" />-->
+            <ImageView android:id="@+id/animationIV"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="5px"
+                       android:layout_gravity="center_horizontal"
+                       android:src="@mipmap/loading_1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:text="该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。"/>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</com.yanbober.support_library_demo.view.MySwipeRefreshLayout>
+
+</LinearLayout>

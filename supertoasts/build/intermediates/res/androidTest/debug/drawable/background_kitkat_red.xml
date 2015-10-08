@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape 
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid 
+        android:color="#E6FF4444" />
+
+    <corners
+        android:radius="25dp"/>
+
+</shape><!-- From: file:/J:/安卓源代码/仿B站/Bili/supertoasts/res/drawable/background_kitkat_red.xml --><!-- From: file:/J:/安卓源代码/仿B站/Bili/supertoasts/build/intermediates/bundles/debug/res/drawable/background_kitkat_red.xml -->

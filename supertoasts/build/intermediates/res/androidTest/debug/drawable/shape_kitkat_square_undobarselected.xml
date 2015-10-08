@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape 
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid 
+        android:color="#55FFFFFF" />
+
+</shape><!-- From: file:/J:/安卓源代码/仿B站/Bili/supertoasts/res/drawable/shape_kitkat_square_undobarselected.xml --><!-- From: file:/J:/安卓源代码/仿B站/Bili/supertoasts/build/intermediates/bundles/debug/res/drawable/shape_kitkat_square_undobarselected.xml -->

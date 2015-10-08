@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/framelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="150dp"
+    android:background="#ffffff">
+    <com.example.bajian.viewflow.ViewFlow
+        android:id="@+id/viewflow"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    </com.example.bajian.viewflow.ViewFlow>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        >
+        <com.example.bajian.viewflow.CircleFlowIndicator
+            android:padding="2dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/viewflowindic"
+            android:layout_gravity="center_horizontal|bottom"
+            app:radius="4dip"
+            app:circleSeparation = "20dip"
+            app:inactiveType="fill"
+            app:activeType="fill"
+            app:inactiveColor="#fff"
+            app:activeColor="#00f"
+            />
+    </LinearLayout>
+</FrameLayout>

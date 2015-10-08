@@ -1,0 +1,43 @@
+apply plugin: 'android-library'
+
+
+buildscript{
+
+	repositories{
+		mavenCentral()
+	}
+
+	dependencies{
+        classpath 'com.android.tools.build:gradle:1.0.0+'
+	}
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
+
+android {
+
+	 lintOptions {  
+	      abortOnError false  
+	}
+
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+	defaultConfig {
+		minSdkVersion 8
+		targetSdkVersion 19
+	}
+
+	sourceSets {
+
+		main{
+            java.srcDirs = ['src']
+            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = ['res']
+		}
+
+	}
+
+}

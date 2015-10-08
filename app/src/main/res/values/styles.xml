@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#34A2DA</item>
+        <item name="colorPrimaryDark">#1785C6</item>
+        <!--<item name="colorAccent">#FF4081</item>
+        <item name="android:windowBackground">@android:color/white</item>-->
+    </style>
+
+
+    <!--toobar compat-->
+    <style name="AppThemeToolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--Toolbar颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--返回键样式-->
+        <item name="drawerArrowStyle">@style/AppThemeToolbar.DrawerArrowToggle</item>
+        <!--底部导航颜色-->
+        <!--<item name="android:navigationBarColor">@color/colorPrimary</item>-->
+         <!--<item name="android:windowTranslucentStatus">true</item>-->
+    </style>
+    <style name="AppThemeToolbar.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+</resources>

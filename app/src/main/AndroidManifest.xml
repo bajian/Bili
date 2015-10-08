@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:versionCode="1"
+          android:versionName="1.0"
+    package="com.yanbober.support_library_demo" >
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="22"
+        tools:overrideLibrary="com.github.johnpersano.supertoasts;"
+        />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.write_external_storage"/>
+    <application
+
+        android:name=".app.BaseApplication"
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppThemeToolbar" >
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:label="仿B站" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SubActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:launchMode="singleTop"
+            android:label="详情"></activity>
+    </application>
+
+</manifest>

@@ -36,9 +36,11 @@ import butterknife.ButterKnife;
  */
 public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
 
+    private static String TAG="MultiRecyclerViewAdapter";
     private Context mContext;
     private List<Bungumi.ListEntity> mList;
     private int width;
+    private int i=0;
 
     public MultiRecyclerViewAdapter(Context mContext, List<Bungumi.ListEntity> list) {
         super(mContext);
@@ -58,14 +60,9 @@ public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof HeaderViewHolder) {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            ((HeaderViewHolder) holder).mLlHeader.setLayoutParams(params);
 
-            //设置占满全格
-            StaggeredGridLayoutManager.LayoutParams layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            layoutParams.setFullSpan(true);
-            holder.itemView.setLayoutParams(layoutParams);
+            Log.d(TAG,"onBindViewHolder HeaderViewHolder");
+
         } else if (holder instanceof ViewHolder) {
             onMyBindViewHolder((ViewHolder)holder, position-mHeaderCount-mBottomCount);
         }
@@ -176,6 +173,10 @@ public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
         HeaderViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
+            StaggeredGridLayoutManager.LayoutParams layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            layoutParams.setFullSpan(true);
+            this.itemView.setLayoutParams(layoutParams);
+
         }
     }
 }

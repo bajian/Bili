@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -16,7 +15,6 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.yanbober.support_library_demo.adapter.BaseMultipleItemAdapter;
 import com.yanbober.support_library_demo.adapter.MultiRecyclerViewAdapter;
 import com.yanbober.support_library_demo.bean.Bungumi;
 import com.yanbober.support_library_demo.persistence.Constant;
@@ -59,10 +57,6 @@ public class InfoDetailsFragment extends Fragment implements SwipeRefreshLayout.
         ButterKnife.bind(this, view);
 //        View view_header = inflater.inflate(R.layout.recyclerview_header, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-//RecyclerViewHeader的使用教程，不舍得删        ll_header = view.findViewById(R.id.ll_header);
-//        ll_header = RecyclerViewHeader.fromXml(getActivity(), R.layout.recyclerview_header);
-       /* ll_btn_left = (LinearLayout) view_header.findViewById(R.id.ll_btn_left);
-        ll_btn_right = (LinearLayout) view_header.findViewById(R.id.ll_btn_right);*/
 
         return view;
     }
@@ -100,38 +94,8 @@ public class InfoDetailsFragment extends Fragment implements SwipeRefreshLayout.
 //        mStaggeredGridLayoutManager.setSpanSizeLookup(new GridSpanSizeLookup(mStaggeredGridLayoutManager.getSpanCount()));
         mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
 
-//        if (list != null) {
-            /*mRecyclerViewAdapter = new RecyclerViewAdapter(getActivity(), list);
-//            mRecyclerViewAdapter.addHeaderView(ll_header);
-            mRecyclerView.setAdapter(mRecyclerViewAdapter);*/
-            /*ll_header = RecyclerViewHeader.fromXml(getActivity(), R.layout.recyclerview_header);
-            ll_header.attachTo(mRecyclerView);*/
-//        }
-
     }
 
-    /**
-     * 设置Grid/StaggeredGrid LayoutManager的布局样式
-     */
-    private class GridSpanSizeLookup extends GridLayoutManager.SpanSizeLookup {
-
-        private int mSpanSize = 1;
-
-        public GridSpanSizeLookup(int spanSize) {
-            mSpanSize = spanSize;
-        }
-
-        @Override
-        public int getSpanSize(int position) {
-            Log.d("getSpanSize",mRecyclerViewAdapter.getItemViewType(position)+"--"+position);
-            // 如果是头或底的类型，那么就设置横跨所有列
-            if (mRecyclerViewAdapter.getItemViewType(position) == BaseMultipleItemAdapter.ITEM_TYPE.ITEM_TYPE_HEADER.ordinal() ||
-                    mRecyclerViewAdapter.getItemViewType(position) == BaseMultipleItemAdapter.ITEM_TYPE.ITEM_TYPE_BOTTOM.ordinal()) {
-                return mSpanSize;
-            }
-            return 1;
-        }
-    }
 
     /**
      * 解析json放入view里

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 /**
  * Created by hgx on 2015/10/4.
+ * 没有复用，已废弃
  */
 public class FullyStaggeredGridLayoutManager extends StaggeredGridLayoutManager {
 

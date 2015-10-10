@@ -32,8 +32,8 @@ import butterknife.ButterKnife;
 /**
  * 番剧
  */
-public class InfoDetailsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
-    private static final String TAG = "InfoDetailsFragment";
+public class BungumiFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+    private static final String TAG = "BungumiFragment";
     @Bind(R.id.swipe_container)
     SwipeRefreshLayout mSwipeContainer;
     private RecyclerView mRecyclerView;

@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
         }
         //初始化ViewPager的数据集
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new InfoDetailsFragment());
-        fragments.add(new ShareFragment());
+        fragments.add(new BungumiFragment());
+        fragments.add(new RecommendFragment());
         fragments.add(new AgendaFragment());
         fragments.add(new AgendaFragment());
         fragments.add(new AgendaFragment());

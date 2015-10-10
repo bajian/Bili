@@ -34,11 +34,9 @@ import butterknife.ButterKnife;
 /**
  * 推荐
  */
-public class ShareFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class RecommendFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    private static final String TAG = "ShareFragment";
-    /*    @InjectView(R.id.abv)
-        AutoBannerViewPager mAbv;*/
+    private static final String TAG = "RecommendFragment";
     @Bind(R.id.swipe_container)
     SwipeRefreshLayout mSwipeContainer;
     @Bind(R.id.viewflow)
@@ -79,19 +77,6 @@ public class ShareFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     private void iniView() {
         mSwipeContainer.setOnRefreshListener(this);
     }
-
-/*    private void initViewPager() {
-        views=new ArrayList<>();
-        for (int i=0;i<tuijianList.size();i++){
-            Log.d(TAG, "getImageurl" +tuijianList.get(i).getImageurl());
-            ImageView view = new ImageView(getActivity());
-            ImageLoader.getInstance().displayImage(tuijianList.get(i).getImageurl(),view);
-            views.add(view);
-        }
-        mViewPagerAdapter=new ViewPagerAdapter(views);
-        mAbv.setAdapter(mViewPagerAdapter);
-    }*/
-
 
     private void getViewPagerData() {
         HttpUtil.getInstance().send(HttpRequest.HttpMethod.GET, URLConstant.URL_TUIJIAN_VIEWPAGER, new RequestCallBack<String>() {

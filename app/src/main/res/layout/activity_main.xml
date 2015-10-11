@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/drawer_layout"
-
         android:orientation="vertical">
         <!--必须使用CoordinatorLayout才会有向上隐藏效果-->
         <android.support.design.widget.CoordinatorLayout
@@ -25,13 +24,6 @@
 
                 android:theme="@style/Widget.AppCompat.ActionBar.Solid">
 
-                <!--            <android.support.v7.widget.Toolbar
-                                android:id="@+id/tool_bar"
-                                android:layout_width="match_parent"
-                                android:layout_height="?attr/actionBarSize"
-                                android:background="?attr/colorPrimary"
-
-                                app:layout_scrollFlags="scroll|enterAlways" />-->
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/tool_bar"
                     android:layout_width="match_parent"
@@ -39,9 +31,78 @@
                     android:background="?attr/colorPrimary"
                     android:minHeight="?attr/actionBarSize"
                     android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:contentInsetStart="0dp"
                     app:layout_scrollFlags="scroll|enterAlways"
                     app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
 
+                        <LinearLayout
+                            android:id="@+id/LL_drawer_home"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_drawer_home"/>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/iv_user_header"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:border_width="1dp"
+                                app:border_color="#ffffff"
+                                android:src="@mipmap/bili_default_avatar"
+                                />
+                            <TextView
+                                android:id="@+id/tv_userName"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/user_not_login"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/LL_drawer_right"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/ic_game_center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_menu_top_game_center"/>
+
+                            <ImageView
+                                android:id="@+id/iv_download_center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_toolbar_menu_download"
+                                />
+                            <ImageView
+                                android:id="@+id/iv_search_center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/abc_ic_search_api_mtrl_alpha"
+                                />
+
+                        </LinearLayout>
+
+
+
+                    </RelativeLayout>
                 </android.support.v7.widget.Toolbar>
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tab_layout"

@@ -7,6 +7,9 @@
     <string name="header_online_text_right">进去看看</string>
     <string name="header_hot_text">推荐番剧</string>
     <string name="header_hot_text_right">更多</string>
+    <string name="user_not_login">未登录</string>
+    <string name="one_more_exit">再按一次退出程序</string>
+    <string name="click_to_login">点击头像登录</string>
 
 
     <!-- From: file:/Users/mikepenz/GoogleDrive/Development/AndroidLibraries/MaterialDrawer/library/src/main/res/values/colors.xml -->

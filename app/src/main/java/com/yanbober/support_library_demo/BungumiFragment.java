@@ -53,7 +53,7 @@ public class BungumiFragment extends Fragment implements SwipeRefreshLayout.OnRe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.info_details_fragment, container, false);
+        View view = inflater.inflate(R.layout.bungumi_fragment, container, false);
         ButterKnife.bind(this, view);
 //        View view_header = inflater.inflate(R.layout.recyclerview_header, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);

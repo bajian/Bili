@@ -31,7 +31,7 @@
             app:inactiveType="fill"
             app:activeType="fill"
             app:inactiveColor="#fff"
-            app:activeColor="#00f"
+            app:activeColor="?attr/colorPrimary"
             />
     </LinearLayout>
 </FrameLayout>

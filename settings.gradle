@@ -1,1 +1,1 @@
-include ':app', ':supertoasts', ':viewflow'
+include ':app', ':supertoasts', ':viewflow', ':circleimageview'

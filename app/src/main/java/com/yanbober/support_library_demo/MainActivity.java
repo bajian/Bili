@@ -11,8 +11,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.yanbober.support_library_demo.adapter.FragmentAdapter;
@@ -22,7 +25,25 @@ import com.yanbober.support_library_demo.view.SystemBarTintManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.iv_user_header)
+    ImageView mIvUserHeader;
+    @Bind(R.id.tv_userName)
+    TextView mTvUserName;
+    @Bind(R.id.LL_drawer_home)
+    LinearLayout mLLDrawerHome;
+    @Bind(R.id.ic_game_center)
+    ImageView mIcGameCenter;
+    @Bind(R.id.iv_download_center)
+    ImageView mIvDownloadCenter;
+    @Bind(R.id.iv_search_center)
+    ImageView mIvSearchCenter;
+    @Bind(R.id.LL_drawer_right)
+    LinearLayout mLLDrawerRight;
     //将ToolBar与TabLayout结合放入AppBarLayout
     private Toolbar mToolbar;
     //DrawerLayout中的左侧菜单控件
@@ -39,8 +60,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         //初始化控件及布局
         initView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 
 
@@ -63,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        actionBar.setDisplayHomeAsUpEnabled(true)    // 给左上角图标的左边加上一个返回的图标 。对应ActionBar.DISPLAY_HOME_AS_UP
 //        actionBar.setDisplayShowHomeEnabled(true)   //使左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题，否则，显示应用程序图标，对应id为android.R.id.home，对应ActionBar.DISPLAY_SHOW_HOME
-        actionBar.setHomeAsUpIndicator(R.mipmap.ic_launcher);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setHomeAsUpIndicator(R.mipmap.ic_launcher);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //对NavigationView添加item的监听事件
         mNavigationView.setNavigationItemSelectedListener(naviListener);
@@ -79,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         titles.add("关注");
         titles.add("发现");
         //初始化TabLayout的title
-        for (int i=0;i<titles.size();i++){
+        for (int i = 0; i < titles.size(); i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
         }
         //初始化ViewPager的数据集
@@ -97,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);//给Tabs设置适配器
 
-        toast = ToastUtil.getSuperToast(this, "再按一次退出程序");
+        toast = ToastUtil.getSuperToast(this, getString(R.string.one_more_exit));
     }
 
     @Override
@@ -107,12 +135,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void quitToast() {
-        if(null == toast.getView().getParent()){
+        if (null == toast.getView().getParent()) {
             toast.show();
-        }else{
+        } else {
             System.exit(0);
         }
     }
+
+    @OnClick({R.id.LL_drawer_home,R.id.iv_download_center,R.id.iv_search_center,R.id.ic_game_center})
+    void click(View view) {
+        switch (view.getId()) {
+            case R.id.LL_drawer_home:
+                if (mDrawerLayout.isDrawerOpen(mNavigationView)){
+                    mDrawerLayout.closeDrawer(mDrawerLayout);
+                }else{
+                    mDrawerLayout.openDrawer(GravityCompat.START);
+                }
+                break;
+            case R.id.iv_download_center:
+                break;
+            case R.id.iv_search_center:
+                break;
+            case R.id.ic_game_center:
+                break;
+        }
+    }
+
 
     private NavigationView.OnNavigationItemSelectedListener naviListener = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -136,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //主界面右上角的menu菜单
@@ -161,5 +210,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

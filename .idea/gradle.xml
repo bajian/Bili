@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/circleimageview" />
             <option value="$PROJECT_DIR$/supertoasts" />
             <option value="$PROJECT_DIR$/viewflow" />
           </set>

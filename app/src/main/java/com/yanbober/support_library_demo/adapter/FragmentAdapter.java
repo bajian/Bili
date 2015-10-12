@@ -5,17 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
 
-/**
- * Author       : yanbo
- * Date         : 2015-06-01
- * Time         : 15:32
- * Description  :
- */
+
 public class FragmentAdapter extends FragmentStatePagerAdapter {
     private List<Fragment> mFragments;
-    private List<String> mTitles;
+    private String[] mTitles;
 
-    public FragmentAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
+    public FragmentAdapter(FragmentManager fm, List<Fragment> fragments, String[] titles) {
         super(fm);
         mFragments = fragments;
         mTitles = titles;
@@ -33,6 +28,6 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitles.get(position);
+        return mTitles[position];
     }
 }

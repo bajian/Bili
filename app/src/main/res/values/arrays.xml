@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_fragment_name">
+        <item>番剧</item>
+        <item>推荐</item>
+        <item>分区</item>
+        <item>关注</item>
+        <item>发现</item>
+    </string-array>
+</resources>

@@ -88,10 +88,8 @@ public class BungumiFragment extends Fragment implements SwipeRefreshLayout.OnRe
         mSwipeContainer.setOnRefreshListener(this);
 
         mRecyclerView.setHasFixedSize(false);
-//        StaggeredGridLayoutManager mStaggeredGridLayoutManager = new FullyStaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);//表示两列，并且是竖直方向的瀑布流
         StaggeredGridLayoutManager mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);//表示两列，并且是竖直方向的瀑布流
         mStaggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
-//        mStaggeredGridLayoutManager.setSpanSizeLookup(new GridSpanSizeLookup(mStaggeredGridLayoutManager.getSpanCount()));
         mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
 
     }
@@ -106,7 +104,6 @@ public class BungumiFragment extends Fragment implements SwipeRefreshLayout.OnRe
         Bungumi bungumi = GsonUtil.parseJson(json, Bungumi.class);
         list = bungumi.getList();
         if (list!=null && mRecyclerViewAdapter==null){
-//            mRecyclerViewAdapter = new RecyclerViewAdapter(getActivity(), list);
             mRecyclerViewAdapter = new MultiRecyclerViewAdapter(getActivity(), list);
             mRecyclerView.setAdapter(mRecyclerViewAdapter);
         }

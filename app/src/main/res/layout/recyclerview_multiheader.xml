@@ -71,12 +71,12 @@
             />
     </RelativeLayout>
     <LinearLayout
-
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
+            android:layout_marginRight="4dp"
             android:id="@+id/cv"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -86,16 +86,17 @@
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/iv_pic"
-                    android:background="@color/md_grey_500"
-                    android:layout_width="160dp"
-                    android:layout_height="210dp"
+                    android:background="@color/md_grey_200"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_pic"/>
+                    />
                 <TextView
                     android:id="@+id/tv_question"
                     android:layout_width="match_parent"
@@ -105,12 +106,13 @@
                     android:textSize="15sp"
                     android:maxLines="2"
                     android:layout_marginLeft="5dp"
-                    android:text="亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记"/>
+                    />
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_marginLeft="4dp"
             android:id="@+id/cv_right"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -120,16 +122,17 @@
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/iv_pic_right"
-                    android:background="@color/md_grey_500"
-                    android:layout_width="160dp"
-                    android:layout_height="210dp"
+                    android:background="@color/md_grey_200"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_pic"/>
+                    />
                 <TextView
                     android:id="@+id/tv_question_right"
                     android:layout_width="match_parent"
@@ -139,7 +142,7 @@
                     android:textSize="15sp"
                     android:maxLines="2"
                     android:layout_marginLeft="5dp"
-                    android:text="亚斯特兰战记亚斯特兰"/>
+                    />
 
             </LinearLayout>
 
@@ -152,6 +155,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
+            android:layout_marginRight="4dp"
             android:id="@+id/cv2"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -161,16 +165,16 @@
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/iv_pic2"
-                    android:background="@color/md_grey_500"
-                    android:layout_width="160dp"
-                    android:layout_height="210dp"
+                    android:background="@color/md_grey_200"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_pic"/>
+                    />
                 <TextView
                     android:id="@+id/tv_question2"
                     android:layout_width="match_parent"
@@ -180,12 +184,13 @@
                     android:textSize="15sp"
                     android:maxLines="2"
                     android:layout_marginLeft="5dp"
-                    android:text="亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记亚斯特兰战记"/>
+                    android:text=""/>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_marginLeft="4dp"
             android:id="@+id/cv_right2"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -195,16 +200,17 @@
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/iv_pic_right2"
-                    android:background="@color/md_grey_500"
-                    android:layout_width="160dp"
-                    android:layout_height="210dp"
+                    android:background="@color/md_grey_200"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_pic"/>
+                    />
                 <TextView
                     android:id="@+id/tv_question_right2"
                     android:layout_width="match_parent"
@@ -214,7 +220,7 @@
                     android:textSize="15sp"
                     android:maxLines="2"
                     android:layout_marginLeft="5dp"
-                    android:text="亚斯特兰战记亚斯特兰"/>
+                    android:text=""/>
 
             </LinearLayout>
 

@@ -100,17 +100,9 @@ public class MainActivity extends AppCompatActivity {
 //        mDrawerLayout.openDrawer(mNavigationView);
 
         //初始化TabLayout的title数据集
-//        List<String> titles = new ArrayList<>();
-        /*titles.add("番剧");
-        titles.add("推荐");
-        titles.add("分区");
-        titles.add("关注");
-        titles.add("发现");*/
-
         String[] titles =getResources().getStringArray(R.array.main_fragment_name);
         //初始化TabLayout的title
         for (int i = 0; i < titles.length; i++) {
-//            mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
             mTabLayout.addTab(mTabLayout.newTab().setText(titles[i]));
         }
         //初始化ViewPager的数据集

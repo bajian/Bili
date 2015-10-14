@@ -1,0 +1,153 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_11"
+    >
+
+    <include
+        android:id="@+id/titlebar"
+        layout="@layout/window_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lineGray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ic_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_22"
+            />
+        <TextView
+            android:text="bilibili"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/md_pink_300"
+            android:layout_centerVertical="true">
+
+        </TextView>
+        <ImageView
+            android:id="@+id/ic_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_33"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_login_username_default"
+            />
+
+
+        <EditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入手机号"
+            android:background="@null"
+            android:textColorHint="@color/black_02"
+            android:maxLength="11"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:textColor="@color/black_02"
+            android:textSize="17sp" />
+    </LinearLayout>
+    <View
+        android:id="@+id/username_line"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/black_02" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_pwd"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_login_password_default"
+            />
+
+
+        <EditText
+            android:id="@+id/et_login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入密码"
+            android:background="@null"
+            android:textColorHint="@color/black_02"
+            android:maxLength="11"
+            android:password="true"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:textColor="@color/black_02"
+            android:textSize="17sp" />
+    </LinearLayout>
+    <View
+        android:id="@+id/psw_line"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/black_02" />
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="注册"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="login"
+            android:text="登录"/>
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

@@ -123,13 +123,13 @@
             </com.yanbober.support_library_demo.view.MyViewPager>
 
         </android.support.design.widget.CoordinatorLayout>
-        <!--DrawerLayout的SlideMenu-->
+        <!--DrawerLayout的SlideMenu app:headerLayout="@layout/drawer_header"-->
         <android.support.design.widget.NavigationView
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:headerLayout="@layout/drawer_header"
+
             app:menu="@menu/menu_drawer"/>
 
     </android.support.v4.widget.DrawerLayout>

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="200dp">
     <LinearLayout
-
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -13,6 +12,7 @@
         android:background="?attr/colorPrimary">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_drawerheader"
             android:layout_width="80dp"
             android:layout_height="80dp"
             app:border_width="1dp"
@@ -20,6 +20,7 @@
             android:src="@mipmap/bili_default_avatar"/>
 
         <TextView
+            android:id="@+id/tv_state_dsc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -28,6 +29,7 @@
 
     </LinearLayout>
     <ImageView
+        android:id="@+id/iv_header_bg"
         android:layout_gravity="bottom|right"
         android:src="@mipmap/bili_drawerbg_not_logined"
         android:layout_width="200dp"

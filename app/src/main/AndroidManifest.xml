@@ -40,6 +40,13 @@
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:launchMode="singleTop"
             android:label="详情"></activity>
+
+        <activity android:name=".LogInActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:launchMode="singleTop"
+            android:label="登录"></activity>
     </application>
 
 </manifest>

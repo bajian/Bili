@@ -1,5 +1,6 @@
 package com.yanbober.support_library_demo;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -28,6 +29,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.iv_user_header)
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     //v4中的ViewPager控件
     private ViewPager mViewPager;
     private SuperToast toast;
+    private CircleImageView mIvDrawerheader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
         //对NavigationView添加item的监听事件
         mNavigationView.setNavigationItemSelectedListener(naviListener);
+        View headerView = getLayoutInflater().inflate(R.layout.drawer_header, null);
+        mIvDrawerheader= (CircleImageView) headerView.findViewById(R.id.iv_drawerheader);
+        mIvDrawerheader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LogInActivity.class));
+            }
+        });
+        mNavigationView.addHeaderView(headerView);
+
         //开启应用默认打开DrawerLayout
 //        mDrawerLayout.openDrawer(mNavigationView);
 
@@ -160,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView.OnNavigationItemSelectedListener naviListener = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(MenuItem menuItem) {
-            menuItem.setChecked(true);
             //点击NavigationView中定义的menu item时触发反应
             switch (menuItem.getItemId()) {
                 case R.id.menu_info_details:
@@ -173,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
                     mViewPager.setCurrentItem(2);
                     break;
             }
+            menuItem.setChecked(true);
             //关闭DrawerLayout回到主界面选中的tab的fragment页
             mDrawerLayout.closeDrawer(mNavigationView);
             return false;

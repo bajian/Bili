@@ -1,6 +1,7 @@
 package com.yanbober.support_library_demo.utils;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -345,6 +346,18 @@ public class TimeUtil {
         } catch (ParseException e) {
         }
         return millis;
+    }
+
+
+    /**
+     * 计算出N天后或者前距现在的timestamp毫秒数，如-1昨天，1明天
+     * @param distance 距今天数，昨天
+     * @return
+     */
+    public static long getMillis(int distance){
+        long time = System.currentTimeMillis()+86400000*distance;
+        Log.d("ExpandableAdapte",""+time);
+        return TimeUtil.string2Millis(TimeUtil.millisToStringDate(time, "yyyy-MM-dd"), "yyyy-MM-dd");
     }
 
     /**

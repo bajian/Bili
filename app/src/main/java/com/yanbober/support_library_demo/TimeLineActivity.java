@@ -3,12 +3,14 @@ package com.yanbober.support_library_demo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.okhttp.Request;
+import com.yanbober.support_library_demo.adapter.ExpandableAdapter;
 import com.yanbober.support_library_demo.bean.TimeLineBean;
 import com.yanbober.support_library_demo.persistence.URLConstant;
 import com.yanbober.support_library_demo.utils.GsonUtil;
@@ -41,6 +43,8 @@ public class TimeLineActivity extends AppCompatActivity {
     @Bind(R.id.expandableListView)
     ExpandableListView mExpandableListView;
     public TimeLineBean mTimeLineBean;
+    private static String TAG="TimeLineActivity";
+    private ExpandableAdapter mExpandableAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class TimeLineActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //初始化控件及布局
         initView();
+        Log.d(TAG, "setData" );
         setData();
     }
 
@@ -58,13 +63,22 @@ public class TimeLineActivity extends AppCompatActivity {
 
             @Override
             public void onError(Request request, Exception e) {
-
+                Log.d(TAG,"onError"+e.getMessage());
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(TimeLineBean response) {
                 mTimeLineBean = response;
                 //TODO SET local strage
+                Log.d(TAG,mTimeLineBean.toString());
+                mExpandableAdapter=new ExpandableAdapter(TimeLineActivity.this,mTimeLineBean.getList());
+                mExpandableListView.setAdapter(mExpandableAdapter);
+                mExpandableAdapter.notifyDataSetChanged();
+                int groupCount=mExpandableAdapter.getGroupCount();
+                for (int i=0;i<groupCount;i++) {
+                    mExpandableListView.expandGroup(i);
+                }
             }
         });
     }

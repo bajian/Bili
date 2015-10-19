@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <FrameLayout
+            android:id="@+id/fl_timeline"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -32,6 +33,7 @@
                 android:src="@mipmap/bangumi_timeline_text"/>
         </FrameLayout>
         <FrameLayout
+            android:id="@+id/fl_bumgumi_index"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"

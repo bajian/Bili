@@ -20,6 +20,7 @@ import com.example.bajian.viewflow.ViewFlow;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yanbober.support_library_demo.R;
 import com.yanbober.support_library_demo.SubActivity;
+import com.yanbober.support_library_demo.TimeLineActivity;
 import com.yanbober.support_library_demo.bean.Bungumi;
 import com.yanbober.support_library_demo.utils.MeasureUtil;
 
@@ -27,6 +28,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Author       : hgx
@@ -37,7 +39,7 @@ import butterknife.ButterKnife;
 public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
 
     private static String TAG="MultiRecyclerViewAdapter";
-    private Context mContext;
+    public Context mContext;
     private List<Bungumi.ListEntity> mList;
     private int width;
     private int i=0;
@@ -97,7 +99,7 @@ public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateHeaderView(ViewGroup parent) {
-        return new HeaderViewHolder(mLayoutInflater.inflate(R.layout.recyclerview_multiheader, parent, false));
+        return new HeaderViewHolder(mLayoutInflater.inflate(R.layout.recyclerview_multiheader, parent, false),mContext);
     }
 
     @Override
@@ -139,6 +141,10 @@ public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
     public static class HeaderViewHolder extends RecyclerView.ViewHolder{
         @Bind(R.id.viewflow)
         ViewFlow mViewflow;
+        @Bind(R.id.fl_bumgumi_index)
+        FrameLayout mFlBungumiIndex;
+        @Bind(R.id.fl_timeline)
+        FrameLayout mFlTimeLine;
         @Bind(R.id.viewflowindic)
         CircleFlowIndicator mViewflowindic;
         @Bind(R.id.framelayout)
@@ -170,13 +176,30 @@ public class MultiRecyclerViewAdapter extends BaseMultipleItemAdapter {
         @Bind(R.id.ll_header)
         LinearLayout mLlHeader;
 
-        HeaderViewHolder(View view) {
+        private Context mContext;
+
+        HeaderViewHolder(View view,Context context) {
             super(view);
             ButterKnife.bind(this, view);
             StaggeredGridLayoutManager.LayoutParams layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             layoutParams.setFullSpan(true);
             this.itemView.setLayoutParams(layoutParams);
+            mContext=context;
 
+        }
+        @OnClick({R.id.fl_timeline,R.id.fl_bumgumi_index})
+        void click(View view) {
+            switch (view.getId()) {
+                case R.id.fl_timeline:
+                    mContext.startActivity(new Intent(mContext, TimeLineActivity.class));
+                    break;
+                case R.id.fl_bumgumi_index:
+                    break;
+                case R.id.iv_search_center:
+                    break;
+                case R.id.ic_game_center:
+                    break;
+            }
         }
     }
 }

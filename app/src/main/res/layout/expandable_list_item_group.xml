@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="7dp">
+<FrameLayout
+    android:layout_weight="0.5"
+    android:id="@+id/fl_calenda"
+    android:layout_width="@dimen/x20"
+    android:layout_height="@dimen/x20">
+    <ImageView
+        android:id="@+id/iv_cal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:src="@mipmap/timeline_background"
+        />
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"/>
+</FrameLayout>
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_weight="0.8"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <View
+        android:id="@+id/v_line"
+        android:layout_weight="8"
+        android:layout_gravity="center"
+        android:background="@color/commom_style_gray"
+        android:layout_width="0dp"
+        android:layout_height="0.8dp"></View>
+    <TextView
+        android:id="@+id/tv_week"
+        android:gravity="end"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</LinearLayout>

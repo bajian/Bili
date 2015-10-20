@@ -12,6 +12,7 @@
     <!--去掉按下效果android:listSelector="#00000000"-->
     <ExpandableListView
         android:id="@+id/expandableListView"
+        android:overScrollMode="never"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:listSelector="#00000000"

@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -53,7 +54,6 @@ public class TimeLineActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //初始化控件及布局
         initView();
-        Log.d(TAG, "setData" );
         setData();
     }
 
@@ -71,7 +71,6 @@ public class TimeLineActivity extends AppCompatActivity {
             public void onResponse(TimeLineBean response) {
                 mTimeLineBean = response;
                 //TODO SET local strage
-                Log.d(TAG,mTimeLineBean.toString());
                 mExpandableAdapter=new ExpandableAdapter(TimeLineActivity.this,mTimeLineBean.getList());
                 mExpandableListView.setAdapter(mExpandableAdapter);
                 mExpandableAdapter.notifyDataSetChanged();
@@ -79,6 +78,13 @@ public class TimeLineActivity extends AppCompatActivity {
                 for (int i=0;i<groupCount;i++) {
                     mExpandableListView.expandGroup(i);
                 }
+                //设置viewgroup不能点击收缩
+                mExpandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+                    @Override
+                    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                        return true;
+                    }
+                });
             }
         });
     }
@@ -99,7 +105,6 @@ public class TimeLineActivity extends AppCompatActivity {
 
 
     private void initView() {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             SystemBarTintManager tintManager = new SystemBarTintManager(this);
             tintManager.setStatusBarTintEnabled(true);

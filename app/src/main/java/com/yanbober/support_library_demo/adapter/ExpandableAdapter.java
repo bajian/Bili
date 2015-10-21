@@ -26,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 可以参考 http://www.open-open.com/lib/view/open1406014566679.html
+ * ExpandableAdapter 可以参考 http://www.open-open.com/lib/view/open1406014566679.html
  * Created by hgx on 2015/10/19.
  */
 public class ExpandableAdapter extends BaseExpandableListAdapter {
@@ -135,7 +135,12 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         }
         //着色
         //basicDrawable.mutate()解决染色错位
-        Drawable basicDrawable = ContextCompat.getDrawable(mContext, R.mipmap.timeline_background);
+        Drawable basicDrawable;
+        if(groupPosition!=7)
+             basicDrawable = ContextCompat.getDrawable(mContext, R.mipmap.timeline_background);
+        else
+             basicDrawable = ContextCompat.getDrawable(mContext, R.mipmap.timeline_other_background);
+
         basicDrawable = DrawableCompat.wrap(basicDrawable);
         DrawableCompat.setTint(basicDrawable.mutate(), resId);
         holder.mIvCal.setImageDrawable(basicDrawable);
@@ -144,17 +149,21 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         holder.mTvDay.setTextColor(resId);
         holder.mTvWeek.setTextColor(resId);
         holder.mTvTime.setTextColor(resId);
+        if(groupPosition==7){
+            holder.mTvTime.setText("");
+            holder.mTvDay.setText("其他");
+            holder.mTvWeek.setText("一周前");
+        }else{
+            holder.mTvTime.setText(week_num[index] + "");
+            holder.mTvDay.setText("周" + week_word[index]);
+            holder.mTvWeek.setText("今天");//TODO
+        }
 
-        holder.mTvTime.setText(week_num[index] + "");
-        holder.mTvDay.setText("周" + week_word[index]);
-        holder.mTvWeek.setText("今天");
         return view;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-//        TextView tv = new TextView(mContext);
-//        tv.setText(dataList.get(groupPosition).get(childPosition).getTitle());
         View view = convertView;
         ViewHolderChild holder;
         if (view == null) {

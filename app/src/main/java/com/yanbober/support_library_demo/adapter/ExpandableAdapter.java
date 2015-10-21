@@ -230,10 +230,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
     }
 
     /**
-     * This class contains all butterknife-injected Views & Layouts from layout file 'expandable_list_item_child.xml'
-     * for easy to all layout elements.
      *
-     * @author ButterKnifeZelezny, plugin for Android Studio by Avast Developers (http://github.com/avast)
      */
     static class ViewHolderChild {
         @Bind(R.id.tv_title)
